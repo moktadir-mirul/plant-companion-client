@@ -5,13 +5,17 @@
 
 ## 🛠️ Technologies Used
 
-This project is built using the following core technologies:
-
+### 🖥️ Frontend
 - ⚛️ **React** – For building the user interface  
 - ⚡ **Vite** – For fast development and build tool  
-- 🎨 **Tailwind CSS** – For styling 
+- 🎨 **Tailwind CSS** – For styling  
 - 🔗 **React Router** – For client-side routing  
 - 📦 **npm** – For managing dependencies
+
+### 🗄️ Backend
+- 🌐 **Node.js** – JavaScript runtime environment for server-side code  
+- 🧰 **Express.js** – Minimal and flexible Node.js web application framework  
+- 🍃 **MongoDB** – NoSQL database for storing application data
 
 
 ## ✨ Main Features
@@ -24,7 +28,7 @@ This project is built using the following core technologies:
 - Fully responsive.
 
 
-### Dependencies Used -
+### 📦 Dependencies Used -
 [React-Router](https://reactrouter.com/)
 [Tailwind-CSS](https://tailwindcss.com/)
 [DaisyUI](https://daisyui.com/)
@@ -37,10 +41,6 @@ This project is built using the following core technologies:
 [React-Tooltip](https://react-tooltip.com/)
 [React-Slick](https://react-slick.neostack.com/)
 
-## 🛠️ For Backend 
-[Node-JS](https://nodejs.org/en)
-[Mongo-DB](https://www.mongodb.com/)
-[Express-js](https://expressjs.com/)
 
 ## 🧑‍💻 How to Run This Project Locally
 To run this project on your local machine, follow the steps below:
