@@ -1,0 +1,6 @@
+a.active {
+  padding-bottom: 4px;
+  border-bottom: 2px solid lightgreen;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));

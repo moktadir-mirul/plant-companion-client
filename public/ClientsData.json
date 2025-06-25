@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "image_url": "https://i.ibb.co/ymjTpKxX/bot-m-2.jpg",
+    "name": "Affan Ahmed",
+    "designation": "Garden Manager",
+    "company": "GreenScape Ltd.",
+    "address": "Dhaka, Bangladesh",
+    "review": "Plant Companion has truly revolutionized how I care for my plants. The reminders for watering, sunlight, and fertilization have made it so much easier to manage our large inventory of plants. It's an essential tool for any plant enthusiast!"
+  },
+  {
+    "id": 2,
+    "image_url": "https://i.ibb.co/9mV13nBz/botanist-m.jpg",
+    "name": "Arif Reza",
+    "designation": "Horticulturist",
+    "company": "Bangla Botanicals",
+    "address": "Chittagong, Bangladesh",
+    "review": "I love how the tracker keeps me on schedule with my plant care. The growth tracking feature is fantastic, and it's helped me improve the health of my indoor plants. Highly recommend it to anyone serious about plant care."
+  },
+  {
+    "id": 3,
+    "image_url": "https://i.ibb.co/zVbF0BJV/botanist-2-f.jpg",
+    "name": "Rebecca Arora",
+    "designation": "Plant Shop Owner",
+    "company": "The Urban Garden",
+    "address": "Stockholm, Sweden",
+    "review": "Managing my plant inventory has never been easier! The Plant Companion app makes it so simple to track care routines and make sure all my plants are happy. It’s also helped me provide better advice to my customers!"
+  }
+]
