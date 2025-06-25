@@ -47,7 +47,7 @@ To run this project on your local machine, follow the steps below:
 
 ### 📁 1. Clone the Repository
 - Use bash/powershell/cmd (any you want) -
-git clone https://github.com/moktadir-mirul/your-repo-name.git
+git clone https://github.com/moktadir-mirul/plant-companion-client
 ### 📂 2. Navigate to the Project Directory
 cd your-repo-name
 ### 📦 3. Install Dependencies
