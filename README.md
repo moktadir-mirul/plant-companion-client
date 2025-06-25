@@ -28,7 +28,7 @@
 - Fully responsive.
 
 
-### 📦 Dependencies Used -
+### ⚙️ Dependencies Used -
 [React-Router](https://reactrouter.com/)
 [Tailwind-CSS](https://tailwindcss.com/)
 [DaisyUI](https://daisyui.com/)
