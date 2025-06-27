@@ -58,7 +58,7 @@ const UpdatePlant = () => {
           });
           setAllPlants(updatedPlants);
           form.reset();
-          navigate("/myplants");
+          navigate("/dashboard/myplants");
         }
       });
   };

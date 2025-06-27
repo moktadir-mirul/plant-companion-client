@@ -36,7 +36,7 @@ const MyPlant = () => {
         </h1>
         <button
           className="mt-4 px-8 py-2 bg-green-800 text-white rounded-lg hover:bg-green-950 transition"
-          onClick={() => navigate("/addplant")}
+          onClick={() => navigate("/dashboard/addplant")}
         >
           Add Plant
         </button>
@@ -77,12 +77,12 @@ const MyPlant = () => {
   };
 
   const handleUpdate = (id) => {
-    navigate(`/updateplant/${id}`);
+    navigate(`/dashboard/updateplant/${id}`);
   };
 
   return (
     <div className=" bg-green-50 dark:bg-gray-700 bg-[url('https://www.transparenttextures.com/patterns/green-dust-and-scratches.png')] bg-cover p-6">
-      <h1 className="text-center py-10 text-6xl text-transparent bg-clip-text bg-gradient-to-br from-green-900 dark:from-green-600 dark:to-lime-600 to-lime-900 play font-bold">
+      <h1 className="text-center py-5 text-6xl text-transparent bg-clip-text bg-gradient-to-br from-green-900 dark:from-green-600 dark:to-lime-600 to-lime-900 play font-bold">
         Plants of{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-br from-green-600 dark:from-green-400 to-lime-600 play font-bold">
           {userInfo?.displayName}
@@ -92,12 +92,12 @@ const MyPlant = () => {
         {plants?.map((plant) => (
           <div
             key={plant._id}
-            className="bg-white dark:bg-gray-300 rounded-2xl shadow-lg p-5 flex flex-col md:flex-row md:items-center gap-5 hover:shadow-xl transition-shadow duration-300"
+            className="bg-white dark:bg-gray-300 rounded-2xl shadow-lg p-5 flex flex-col gap-5 hover:shadow-xl transition-shadow duration-300"
           >
             <img
               src={plant.image}
               alt={plant.plantName}
-              className="w-full md:w-72 lg:w-48 lg:h-60 h-full object-cover rounded-xl"
+              className="w-full h-full object-cover rounded-xl"
             />
             <div className="flex-1 space-y-2">
               <h2 className="text-2xl font-bold text-green-700">

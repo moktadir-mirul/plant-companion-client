@@ -12,9 +12,9 @@ const Sidebar = ({ isOpen, onClose }) => {
     const {userInfo} = useContext(AuthContext)
 
   const links = [
-    { path: "/allplants", label: "All Plants" },
-    { path: "/addplant", label: "Add Plant" },
-    { path: "/myplants", label: "My Plants" },
+    { path: "/dashboard/allplants", label: "All Plants" },
+    { path: "/dashboard/addplant", label: "Add Plant" },
+    { path: "/dashboard/myplants", label: "My Plants" },
   ];
 
   return (
@@ -63,8 +63,8 @@ const Sidebar = ({ isOpen, onClose }) => {
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
-                `block px-3 py-2 rounded hover:bg-green-100 text-green-800 dark:text-gray-200 ${
-                  isActive ? "bg-green-200 font-medium" : ""
+                `block px-3 py-2 rounded hover:bg-green-200 dark:hover:bg-gray-500 text-green-800 dark:text-gray-200 ${
+                  isActive ? "bg-green-200 font-medium dark:bg-gray-500" : ""
                 }`
               }
               onClick={onClose} // Close sidebar on mobile when link clicked

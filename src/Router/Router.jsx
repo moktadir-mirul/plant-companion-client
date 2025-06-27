@@ -14,6 +14,8 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import FallBack from "../Components/FallBack/FallBack";
 import AboutUs from "../Pages/AboutUs";
 import DashBoard from "../Pages/DashBoard";
+import StatusCards from "../Components/StatusCards/StatusCards";
+import DashAllPlant from "../Components/DashAllPlants/DashAllPlants";
 
 export const router = createBrowserRouter([
   {
@@ -26,16 +28,9 @@ export const router = createBrowserRouter([
       },
       {
         path: "/aboutus",
-        Component: AboutUs
+        Component: AboutUs,
       },
-      {
-        path: "/addplant",
-        element: (
-          <PrivateRoute>
-            <AddPlant></AddPlant>
-          </PrivateRoute>
-        ),
-      },
+     
       {
         path: "/login",
         Component: LogIn,
@@ -44,29 +39,12 @@ export const router = createBrowserRouter([
         path: "/register",
         Component: Register,
       },
-      {
-        path: "/updateplant/:id",
-        loader: ({ params }) =>
-          fetch(`https://plantcompanionserver.vercel.app/plants/${params.id}`),
-        HydrateFallback: FallBack,
-        element: (
-          <PrivateRoute>
-            <UpdatePlant></UpdatePlant>
-          </PrivateRoute>
-        ),
-      },
+      
       {
         path: "/allplants",
         Component: AllPlant,
       },
-      {
-        path: "/myplants",
-        element: (
-          <PrivateRoute>
-            <MyPlant></MyPlant>
-          </PrivateRoute>
-        ),
-      },
+      
       {
         path: "/plantdetails/:id",
         loader: ({ params }) =>
@@ -86,7 +64,65 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>
+    element: (
+      <PrivateRoute>
+        <DashBoard></DashBoard>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: (
+          <PrivateRoute>
+            <StatusCards></StatusCards>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("https://plantcompanionserver.vercel.app/plants"),
+        HydrateFallback: FallBack
+      },
+      {
+        path: "/dashboard/allPlants",
+        element: <PrivateRoute><DashAllPlant></DashAllPlant></PrivateRoute>
+      },
+            {
+        path: "/dashboard/plantdetails/:id",
+        loader: ({ params }) =>
+          fetch(`https://plantcompanionserver.vercel.app/plants/${params.id}`),
+        HydrateFallback: FallBack,
+        element: (
+          <PrivateRoute>
+            <PlantDetails></PlantDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/myplants",
+        element: (
+          <PrivateRoute>
+            <MyPlant></MyPlant>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/updateplant/:id",
+        loader: ({ params }) =>
+          fetch(`https://plantcompanionserver.vercel.app/plants/${params.id}`),
+        HydrateFallback: FallBack,
+        element: (
+          <PrivateRoute>
+            <UpdatePlant></UpdatePlant>
+          </PrivateRoute>
+        ),
+      },
+       {
+        path: "/dashboard/addplant",
+        element: (
+          <PrivateRoute>
+            <AddPlant></AddPlant>
+          </PrivateRoute>
+        ),
+      },
+    ],
   },
   {
     path: "*",

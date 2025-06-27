@@ -36,7 +36,7 @@ const DashBoard = () => {
       {/* Main area */}
       <div className="flex-1 bg-green-50 dark:bg-gray-700">
         <div className="w-full h-16 flex items-center justify-center gap-3 bg-green-700 dark:bg-green-950 text-white dark:text-gray-200">
-            <NavLink to={"/home"}>Home</NavLink>
+            <NavLink to={"/"}>Home</NavLink>
             <DarkModeToggle/>
             <button
                 onClick={handleLogout}
