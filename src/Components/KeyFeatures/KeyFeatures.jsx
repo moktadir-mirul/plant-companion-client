@@ -66,7 +66,7 @@ const KeyFeatures = () => {
   }, []);
   return (
     <div>
-      <div className="relative bg-[url(./assets/key-ft-img.jpg)] dark:bg-[url(./assets/floral-bg.png)] dark:bg-repeat bg-fixed bg-no-repeat bg-contain w-full mx-auto key-ft py-10 text-green-800 rounded-2xl">
+      <div className="relative bg-[url(./assets/key-ft-img.jpg)] dark:bg-[url(./assets/floral-bg.png)] dark:bg-repeat dark:bg-auto bg-fixed bg-no-repeat bg-contain w-full mx-auto key-ft text-green-800 rounded-2xl">
         <h1
           ref={keyHd}
           className="pb-10 text-3xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-green-900 dark:from-green-400 to-lime-500 play font-bold text-center"

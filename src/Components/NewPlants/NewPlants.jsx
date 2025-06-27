@@ -30,7 +30,7 @@ const NewPlants = () => {
         <h1 className="text-center py-10 text-6xl text-transparent bg-clip-text bg-gradient-to-br from-green-900 dark:from-green-400 dark:to-lime-500 to-lime-500 play font-bold">
           New Plants
         </h1>
-        <div className="w-11/12 mx-auto pb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="w-11/12 mx-auto pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {sortedPlants?.map((plant) => (
             <div
               key={plant._id}
@@ -39,7 +39,7 @@ const NewPlants = () => {
               <img
                 src={plant.image}
                 alt={plant.plantName}
-                className="w-full h-96 md:h-60 lg:h-72 xl:h-80 object-cover"
+                className="w-full h-96 md:h-60 lg:h-72 xl:h-80 object-cover object-center"
               />
               <div className="p-4 flex flex-col items-center">
                 <h2 className="text-xl font-semibold text-green-800 dark:text-black">
@@ -65,8 +65,8 @@ const NewPlants = () => {
       <h1 className="text-center py-10 text-6xl text-transparent bg-clip-text bg-gradient-to-br from-green-900 dark:from-green-400 dark:to-lime-500 to-lime-500 play font-bold">
         New Plants
       </h1>
-      <div className="w-11/12 mx-auto pb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {sortedPlants.slice(0, 6).map((plant) => (
+      <div className="w-11/12 mx-auto pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        {sortedPlants.slice(0, 8).map((plant) => (
           <div
             key={plant._id}
             className="bg-green-50 dark:bg-gray-400 rounded-2xl shadow-md overflow-hidden transition hover:shadow-xl"
@@ -74,7 +74,7 @@ const NewPlants = () => {
             <img
               src={plant.image}
               alt={plant.plantName}
-              className="w-full h-96 md:h-60 lg:h-72 xl:h-80 object-cover"
+              className="w-full h-96 md:h-60 lg:h-72 xl:h-80 object-cover object-center"
             />
             <div className="p-4 flex flex-col items-center">
               <h2 className="text-xl font-semibold dark:text-black text-green-800">

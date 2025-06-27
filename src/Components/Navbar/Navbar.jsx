@@ -9,12 +9,10 @@ import { FaUserCircle } from "react-icons/fa";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from "react-tooltip";
-import { ThemeContext } from "../../ThemeProvider/ThemeContext";
 import { animate } from "motion";
 
 
 const Navbar = () => {
-  const {darkMode} = useContext(ThemeContext);
   const [showMenu, setShowMenu] = useState(false);
   const { userInfo, userSignOut } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -71,7 +69,7 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   };
   return (
-    <div className="w-full dark:bg-gray-700">
+    <div className="sticky top-0 z-50 w-full bg-green-700 dark:bg-green-800 ">
       {/* For Large devices */}
       <div className="w-11/12 mx-auto hidden lg:flex justify-between items-center py-2">
         <div ref={leftNav} className="flex items-center gap-1">
@@ -82,11 +80,11 @@ const Navbar = () => {
               alt="Plant Companion Logo"
             />
           </div>
-          <h1 className="bebas text-3xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-green-400 dark:from-green-400 to-green-800 dark:to-lime-400">
+          <h1 className="bebas text-3xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-gray-100 dark:from-gray-200 to-green-200 dark:to-lime-400">
             Plant Companion
           </h1>
         </div>
-        <div ref={middleNav} className="list-none flex gap-6 font-bold text-green-800 dark:text-green-400">
+        <div ref={middleNav} className="list-none flex gap-6 font-bold text-white dark:text-gray-200">
           
           <li>
             <NavLink to={"/"}>Home</NavLink>
@@ -95,17 +93,19 @@ const Navbar = () => {
             <NavLink to={"/allplants"}>All Plants</NavLink>
           </li>
           <li>
-            <NavLink to={"/addplant"}>Add Plants</NavLink>
+            <NavLink to={"/aboutus"}>About Us</NavLink>
           </li>
-          <li>
-            <NavLink to={`/myplants`}>My Plants</NavLink>
+          {
+            userInfo && <li>
+            <NavLink to={"/dashboard"}>Dashboard</NavLink>
           </li>
+          }
         </div>
-          <div ref={bTNav}>
-            <DarkModeToggle />
-          </div>
 
-        <div ref={rightNav} className="flex gap-3">
+        <div ref={rightNav} className="flex gap-3 items-center">
+          <div ref={bTNav} >
+            <DarkModeToggle/>
+          </div>
           {userInfo ? (
             <div className="flex gap-2 flex-col lg:flex-row items-center">
               {userInfo.photoURL ? (
@@ -134,7 +134,7 @@ const Navbar = () => {
               )}
               <button
                 onClick={handleLogout}
-                className="btn btn-sm dark:bg-gray-500 dark:text-white border border-green-800 text-green-800 hover:bg-green-800 hover:text-white duration-200"
+                className="border-2 px-4 py-1 bg-white dark:bg-gray-200 rounded-md border-green-800 text-green-800 font-bold hover:bg-green-600 hover:text-white cursor-pointer duration-200"
               >
                 Log Out
               </button>
@@ -142,12 +142,12 @@ const Navbar = () => {
           ) : (
             <>
               <Link to={"/login"}>
-                <button className="btn border-2 border-green-800 text-green-800 font-bold hover:bg-green-800 hover:text-white">
+                <button className="border-2 px-5 py-2 bg-white dark:bg-gray-200 rounded-md border-green-800 text-green-800 font-bold hover:bg-green-600 hover:text-white cursor-pointer duration-200">
                   Log In
                 </button>
               </Link>
               <Link to={"/register"}>
-                <button className="btn border-2 border-green-800 text-green-800 font-bold hover:bg-green-800 hover:text-white">
+                <button className="border-2 px-5 py-2 bg-white dark:bg-gray-200 rounded-md border-green-800 text-green-800 font-bold hover:bg-green-600 hover:text-white cursor-pointer duration-200">
                   Register
                 </button>
               </Link>
@@ -166,7 +166,7 @@ const Navbar = () => {
               alt="Plant Companion Logo"
             />
           </div>
-          <h1 className="bebas text-xl md:text-2xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-green-800 dark:from-green-400 dark:to-lime-500">
+          <h1 className="bebas text-xl md:text-2xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-gray-100 to-green-200 dark:from-gray-200 dark:to-lime-400">
             Plant Companion
           </h1>
         </div>
@@ -176,12 +176,12 @@ const Navbar = () => {
 
         <div ref={sRightNav} className="relative z-10" onClick={handleMenu}>
           {showMenu ? (
-            <RxCross2 color={darkMode ? "white" : "darkgreen"} size={25}></RxCross2>
+            <RxCross2 color="white" size={25}></RxCross2>
           ) : (
-            <IoMenu color={darkMode ? "white" : "darkgreen"} size={25}></IoMenu>
+            <IoMenu color="white" size={25}></IoMenu>
           )}
           <div
-            className={`p-3 absolute text-sm right-0 ${
+            className={`p-3 absolute rounded-md text-sm right-0 ${
               showMenu ? "" : "-top-200"
             } bg-green-50 dark:bg-gray-300 list-none text-green-800 text-center`}
           >
@@ -192,11 +192,13 @@ const Navbar = () => {
               <NavLink to={"/allplants"}>All Plants</NavLink>
             </li>
             <li className="p-2 border-b-2 border-gray-400">
-              <NavLink to={"/addplant"}>Add Plants</NavLink>
+              <NavLink to={"/aboutus"}>About Us</NavLink>
             </li>
-            <li className="p-2 border-b-2 border-gray-400">
-              <NavLink to={"/myplants"}>My Plants</NavLink>
+            {
+              userInfo && <li className="p-2 border-b-2 border-gray-400">
+              <NavLink to={"/dashboard"}>Dashboard</NavLink>
             </li>
+            }
             <div className="py-2 flex flex-col justify-center gap-3">
               {userInfo ? (
                 <div className="flex gap-2 flex-col lg:flex-row items-center">

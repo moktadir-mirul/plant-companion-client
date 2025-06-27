@@ -12,6 +12,7 @@ import PlantDetails from "../Pages/PlantDetails";
 import ResetPassword from "../Components/ResetPassword/ResetPassword";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import FallBack from "../Components/FallBack/FallBack";
+import AboutUs from "../Pages/AboutUs";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
+      },
+      {
+        path: "/aboutus",
+        Component: AboutUs
       },
       {
         path: "/addplant",

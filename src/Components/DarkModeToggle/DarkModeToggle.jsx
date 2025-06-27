@@ -8,7 +8,7 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-black dark:text-white hover:scale-105 transition duration-300">
+      className="cursor-pointer p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-black dark:text-white hover:scale-105 transition duration-300">
       {darkMode === false ? (
         <FaSun className="text-yellow-500 w-6 h-6" />
       ) : (

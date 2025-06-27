@@ -17,6 +17,7 @@ const Error = () => {
           src={ErrorImg}
           alt="error 404"
         />
+        <h1 className="text-4xl py-5 font-bold text-center text-green-800">Error 404: Page not found.</h1>
       </div>
       <div className="flex justify-center items-center py-5">
         <Link to={"/"}>
