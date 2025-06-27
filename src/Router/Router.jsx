@@ -13,6 +13,7 @@ import ResetPassword from "../Components/ResetPassword/ResetPassword";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import FallBack from "../Components/FallBack/FallBack";
 import AboutUs from "../Pages/AboutUs";
+import DashBoard from "../Pages/DashBoard";
 
 export const router = createBrowserRouter([
   {
@@ -82,6 +83,10 @@ export const router = createBrowserRouter([
         Component: ResetPassword,
       },
     ],
+  },
+  {
+    path: "/dashboard",
+    element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>
   },
   {
     path: "*",

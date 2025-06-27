@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef } from "react";
-import plantLogo from "../../assets/plant-logo.png";
+import plantLogo from "../../assets/plantss-logo.png";
 import { Link, NavLink } from "react-router";
 import { MdEmail } from "react-icons/md";
 import { FaFacebook, FaInstagram, FaPhoneAlt } from "react-icons/fa";
@@ -30,8 +30,8 @@ const Footer = () => {
     >
       <div className="w-11/12 mx-auto flex gap-5 lg:gap-0 flex-col lg:flex-row justify-between items-center lg:items-start pb-5">
         <div className="flex-1 flex flex-col justify-center items-center gap-2">
-          <div className="p-3 rounded-full h-20 w-20 bg-white flex justify-center items-center">
-            <img className="h-14 w-14" src={plantLogo} alt="" />
+          <div>
+            <img className="h-16 w-16" src={plantLogo} alt="" />
           </div>
           <h1 className="bebas text-3xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-green-900 dark:from-green-400 to-lime-500 text-center">
             Plant Companion

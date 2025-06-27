@@ -49,8 +49,8 @@ const NewPlants = () => {
                   Category : <strong>{plant.category}</strong>
                 </p>
                 <Link to={`/plantdetails/${plant._id}`}>
-                  <button className="mt-4 px-8 py-2 bg-green-800 text-white rounded-lg hover:bg-green-950 transition">
-                    View Details
+                  <button className="mt-4 px-8 py-2 bg-green-800 text-white rounded-lg hover:bg-green-950 transition cursor-pointer duration-200">
+                    See More
                   </button>
                 </Link>
               </div>
@@ -84,8 +84,8 @@ const NewPlants = () => {
                 Category : <strong>{plant.category}</strong>
               </p>
               <Link to={`/plantdetails/${plant._id}`}>
-                <button className="mt-4 px-8 py-2 bg-green-800 text-white rounded-lg hover:bg-green-950  transition">
-                  View Details
+                <button className="mt-4 px-8 py-2 bg-green-800 text-white rounded-lg hover:bg-green-950 cursor-pointer transition duration-200">
+                  See More
                 </button>
               </Link>
             </div>

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import plantLogo from "../../assets/plant-logo.png";
+import plantLogo from "../../assets/plantss-logo.png";
 import { Link, NavLink, useNavigate } from "react-router";
 import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
@@ -69,11 +69,11 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   };
   return (
-    <div className="sticky top-0 z-50 w-full bg-green-700 dark:bg-green-800 ">
+    <div className="sticky top-0 z-50 w-full bg-green-700 dark:bg-green-950 ">
       {/* For Large devices */}
       <div className="w-11/12 mx-auto hidden lg:flex justify-between items-center py-2">
         <div ref={leftNav} className="flex items-center gap-1">
-          <div className="p-2 w-16 h-16 bg-white dark:bg-gray-300 rounded-full">
+          <div>
             <img
               className="w-14 h-14"
               src={plantLogo}
@@ -159,7 +159,7 @@ const Navbar = () => {
       {/* Menu for small devices */}
       <div className="w-11/12 mx-auto py-1 flex justify-between items-center lg:hidden">
         <div ref={sLeftNav} className="flex items-center gap-1">
-          <div className="p-2 w-14 h-14 bg-white dark:bg-gray-300 rounded-full">
+          <div>
             <img
               className="w-12 h-12"
               src={plantLogo}
